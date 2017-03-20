@@ -1,11 +1,12 @@
 const express = require('express');                       // require express module
+const path = require('path');                             // require path *core module
 
 const app = express();                                    // creating variable app and running express function
 
 
-app.get('/', function(req, res) {                         // creating a get route with home URI '/'
-  res.send('Hello Express!');                             // sending text back and route is requested
-});
+//app.get('/', function(req, res) {                         // creating a get route with home URI '/'
+//  res.send('Hello Express!');                             // sending text back and route is requested
+//});
 
 
 app.get('/about', (req, res)=> {                          // creating an about route (using ES6 arrow syntex)
@@ -15,7 +16,13 @@ app.get('/about', (req, res)=> {                          // creating an about r
 app.get('/user/:name', (req, res)=>{                      // creating a user route with dynamic routing
   let user = req.params.name;                             // accessing params given on req
   res.send('<h1>' + user + '</h1>');                      // sending dynamic data back
-})
+});
+
+
+// set static path
+
+app.use(express.static(path.join(__dirname, 'public')));  // rendering html file at request
+
 
 app.listen(3000, function() {                             // app server listening to defined port 3000
   console.log('server started on port 3000');             // message printed when server is run
