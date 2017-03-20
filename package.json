@@ -1,0 +1,11 @@
+{
+  "name": "expressjs-basic-routing",
+  "version": "1.0.0",
+  "description": "Express setup and basic routing",
+  "main": "app.js",
+  "author": "Lawrence4code",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
