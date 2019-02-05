@@ -2,8 +2,6 @@ const add = (a, b) => {
   console.log('add passed');
 };
 
-add(1, 3);
-
 const substract = (a, b) => {
   console.log('substract passed');
 };
